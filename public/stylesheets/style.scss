@@ -39,7 +39,7 @@ $margin-lg: 3rem;
   align-items: center;
   &__image {
     width: 10rem;
-    height: 10rem;
+    max-height: 10rem;
     border-radius: 25%;
     margin-right: 2rem;
   }

@@ -15,6 +15,8 @@
         <p><%= product.desc %></p>
         <p class="product-card__price">£<%= product.price.toFixed(2)%></p>
         <p>We currently have <%= product.quantity %> in stock</p>
+
+        <% if (isLoggedIn){ %>
         <form
           class="form"
           action="/product/<%= product.id %>?_method=DELETE"
@@ -30,6 +32,7 @@
             <span>Edit Product</span>
           </a>
         </form>
+        <% } %>
       </div>
     </div>
   </body>

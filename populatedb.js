@@ -70,15 +70,37 @@ function createCategoriesProducts(cb) {
         categoryCreate("fruit", "Fresh daily", callback);
       },
       function (callback) {
-        categoryCreate("Frozen", "Frozen foods odf all varieties", callback);
+        categoryCreate("Frozen", "Frozen foods off all varieties", callback);
       },
       function (callback) {
         productCreate(
-          "Chicken",
-          "Frozen Chicken 1kg",
-          7.45,
+          "Potatoes",
+          "1kg bag of potatoes",
+          6.0,
           200,
           "/images/potatoes.jpeg",
+          categories[0],
+          callback
+        );
+      },
+      function (callback) {
+        productCreate(
+          "Potatoes large",
+          "Extra Large Baking Potatoes",
+          4.0,
+          200,
+          "/images/potatoes.jpeg",
+          categories[0],
+          callback
+        );
+      },
+      function (callback) {
+        productCreate(
+          "Frozen Chicken",
+          "Frozen Chicken",
+          5.5,
+          250,
+          "/images/chicken.jpeg",
           categories[2],
           callback
         );

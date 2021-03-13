@@ -4,9 +4,8 @@ const isLoggedIn = (req, res, next) => {
     next();
   } else {
     console.log("nope");
-    res.redirect("/category");
+    res.redirect("/user/login");
   }
-  console.log(req.app.locals);
 };
 
 module.exports = isLoggedIn;

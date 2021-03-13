@@ -1,6 +1,9 @@
 const async = require("async");
 const path = require("path");
 
+//login check middleware
+const isLoggedIn = require("../middleware/isLoggedIn");
+
 //multer setup
 var multer = require("multer");
 var storage = multer.diskStorage({
@@ -96,7 +99,8 @@ exports.product_create_post = async (req, res, next) => {
 exports.product_one_get = async (req, res, next) => {
   const { id } = req.params;
   const product = await Product.findById(id);
-  res.render("product", { product });
+
+  res.render("product", { product, isLoggedIn: req.app.locals.username });
 };
 
 exports.product_one_delete = async (req, res, next) => {
@@ -109,7 +113,10 @@ exports.product_edit_get = async (req, res, next) => {
   const { id } = req.params;
   const product = await Product.findById(id);
   const categories = await Category.find();
-  res.render("product_form_edit", { product, categories });
+  res.render("product_form_edit", {
+    product,
+    categories,
+  });
 };
 
 exports.product_edit_post = async (req, res, next) => {

@@ -43,10 +43,10 @@ router.post("/create", product_create_post);
 router.get("/:id", product_one_get);
 
 //edit form
-router.get("/:id/edit", product_edit_get);
+router.get("/:id/edit", isLoggedIn, product_edit_get);
 
 //post edit form
-router.put("/:id/edit", product_edit_post);
+router.put("/:id/edit", isLoggedIn, product_edit_post);
 
 //delete product by id
 router.delete("/:id", isLoggedIn, product_one_delete);

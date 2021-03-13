@@ -8,19 +8,23 @@
     <title><%=title%></title>
   </head>
   <body>
-    <h1>All Products</h1>
-    <ul>
-      <% products.map(product=> { %>
-      <li>
-        <img src="<%=product.image%>" />
-        <div>
-          <a href="<%=product.url%>">
-            <h2><%= product.name %></h2>
-          </a>
-          <p><%= product.desc %></p>
-        </div>
-      </li>
-      <%})%>
-    </ul>
+    <div class="container">
+      <div class="card product-card">
+        <h1>All Products</h1>
+        <ul class="list">
+          <% products.map(product=> { %>
+          <li class="list-item">
+            <img class="list-item__image" src="<%=product.image%>" />
+            <div>
+              <a href="<%=product.url%>">
+                <h2><%= product.name %></h2>
+              </a>
+              <p><%= product.desc %></p>
+            </div>
+          </li>
+          <%})%>
+        </ul>
+      </div>
+    </div>
   </body>
 </html>
