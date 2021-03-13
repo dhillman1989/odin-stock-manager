@@ -1,0 +1,118 @@
+* {
+  list-style-type: none; }
+
+html {
+  font-size: 62.5%; }
+
+.flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center; }
+
+.mt-md {
+  margin-top: 2rem; }
+
+.list {
+  margin: 0;
+  padding: 0; }
+
+.list-item {
+  padding: 0;
+  display: flex;
+  align-items: center; }
+  .list-item__image {
+    width: 10rem;
+    height: 10rem;
+    border-radius: 25%;
+    margin-right: 2rem; }
+  .list-item div {
+    padding: 0;
+    margin: 0; }
+
+body {
+  background-color: #e7dddd;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif; }
+
+a:link,
+a:visited {
+  color: #000;
+  text-decoration: none; }
+
+.container {
+  width: 110rem;
+  margin: 0 auto; }
+
+.card {
+  flex: 1;
+  border-radius: 1rem;
+  padding: 3rem;
+  border: 1px solid #d1d1d1;
+  background-color: #fff;
+  display: flex;
+  align-items: center; }
+  .card--danger {
+    background-color: #ff8e8e;
+    color: #a10000; }
+
+.form {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  margin-right: 2rem; }
+  .form__label {
+    font-size: 1.5rem;
+    margin-bottom: 1rem; }
+  .form__input {
+    margin-bottom: 3rem;
+    padding: 1rem; }
+  .form__button {
+    position: relative;
+    width: 50%;
+    border: 0;
+    border-radius: 1.5rem;
+    padding: 2rem 0;
+    background-color: #5e9c00;
+    overflow: hidden;
+    color: #fff;
+    transition: transform 1s; }
+    .form__button span {
+      position: relative;
+      z-index: 5; }
+    .form__button::before {
+      content: "";
+      border-radius: 50%;
+      background-color: #5e8c00;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 2px;
+      height: 2px;
+      transition: transform 1s; }
+    .form__button:hover {
+      transform: scale(0.95); }
+      .form__button:hover::before {
+        transform: translatex(-50%) translatey(-50%) scale(140); }
+    .form__button--danger {
+      background-color: #ff6868; }
+      .form__button--danger::before {
+        background-color: #ff2a2a; }
+
+.product-card {
+  flex-direction: column;
+  align-items: center;
+  justify-content: center; }
+  .product-card__price {
+    font-size: 2rem;
+    font-weight: 600; }
+  .product-card form {
+    display: flex;
+    margin: 0;
+    align-items: center;
+    align-self: center; }
+    .product-card form .form__button {
+      color: #fff;
+      font-size: 1.5rem; }
+  .product-card__link {
+    text-transform: capitalize; }
+
+/*# sourceMappingURL=style.css.map */

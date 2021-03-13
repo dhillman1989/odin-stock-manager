@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="/stylesheets/style.css" rel="stylesheet" />
+    <title><%=title%></title>
+  </head>
+  <body>
+    <h1>All Products</h1>
+    <ul>
+      <% products.map(product=> { %>
+      <li>
+        <img src="<%=product.image%>" />
+        <div>
+          <a href="<%=product.url%>">
+            <h2><%= product.name %></h2>
+          </a>
+          <p><%= product.desc %></p>
+        </div>
+      </li>
+      <%})%>
+    </ul>
+  </body>
+</html>

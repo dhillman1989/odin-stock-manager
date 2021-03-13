@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="/stylesheets/style.css" rel="stylesheet" />
+    <title><%= category.name %></title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="card product-card">
+        <h1 class=><%= category.name %></h1>
+        <ul class="list">
+          <%products.map(product => { %>
+          <li class="list-item mt-md">
+            <img class="list-item__image" src="<%= product.image %>" />
+            <div>
+              <a href="/product/<%= product.id %> ">
+                <h2 class="list-item__header"><%=product.name%></h2>
+              </a>
+              <p><%= product.desc %></p>
+              <p>£<%= product.price.toFixed(2) %></p>
+            </div>
+          </li>
+          <% }) %>
+        </ul>
+      </div>
+    </div>
+  </body>
+</html>

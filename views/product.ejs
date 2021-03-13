@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="/stylesheets/style.css" rel="stylesheet" />
+    <title><%= product.name %></title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="card product-card">
+        <h1><%= product.name %></h1>
+        <img src="<%= product.image %>" alt="" />
+        <p><%= product.desc %></p>
+        <p class="product-card__price">£<%= product.price.toFixed(2)%></p>
+        <p>We currently have <%= product.quantity %> in stock</p>
+        <form
+          class="form"
+          action="/product/<%= product.id %>?_method=DELETE"
+          method="POST"
+        >
+          <button class="form__button form__button--danger">
+            <span>Delete</span>
+          </button>
+          <a
+            class="form__button flex-center"
+            href="/product/<%=product.id%>/edit"
+          >
+            <span>Edit Product</span>
+          </a>
+        </form>
+      </div>
+    </div>
+  </body>
+</html>

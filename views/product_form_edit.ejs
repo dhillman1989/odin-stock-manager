@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="/stylesheets/style.css" rel="stylesheet" />
+  <title><%=product.name%></title>
+</head>
+<body>
+  <div class="container">
+    <h1>Edit <%=product.name%></h1>
+    <div class="card">
+      <form class="form" action="/product/<%=product.id%>/edit?_method=PUT" method="POST">
+        <label class="form__label" for="name">Name</label>
+        <input class="form__input"type="text" name="name" id="name" value="<%=product.name%>"/>
+        <label class="form__label" for="desc">Description</label>
+        <input class="form__input"type="text" name="desc" id="desc" value="<%=product.desc%>"/>
+        <label class="form__label" for="price">Price</label>
+        <input class="form__input"type="number" name="price" id="price" step="0.01" value="<%=product.price%>"/>
+        <label class="form__label" for="quantity">Quantity</label>
+        <input class="form__input" type="number" name="quantity" id="quantity" value="<%=product.quantity%>"/>
+        <label class="form__label" for="category">Category</label>
+        <select class="form__input"name="category" id="category">
+          <% categories.map(cat => { %>
+          <option value="<%=cat.id%>" <%= cat.id == product.category._id && "selecteD" %>>
+            <%=cat.name%>
+          </option>
+          <% })%>
+        </select>
+        <button class="form__button"><span>Submit</span></button>
+      </form>
+    </div>
+  </div>
+</body>
+</html>
+

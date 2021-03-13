@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="/stylesheets/style.css" rel="stylesheet" />
+    <title><%=title%></title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="card">
+        <form
+          class="form"
+          action=""
+          method="post"
+          enctype="multipart/form-data"
+        >
+          <label class="form__label" for="name">Product Name</label>
+          <input
+            class="form__input"
+            type="text"
+            name="name"
+            id="name"
+            value="<% if (typeof(product) !==
+      'undefined') { %><%=product.name%><% } %>"
+          />
+          <label class="form__label" for="desc">Description</label>
+          <input
+            class="form__input"
+            type="text"
+            name="desc"
+            id="desc"
+            value="<% if (typeof(product) !==
+      'undefined') { %><%=product.desc%><%} %>"
+          />
+
+          <label class="form__label" for="image">Image</label>
+          <input class="form__input" type="file" name="image" id="image" />
+
+          <label class="form__label" for="price">Price</label>
+          <input
+            class="form__input"
+            step="0.01"
+            type="number"
+            name="price"
+            id="price"
+            value="<% if
+      (typeof(product) !== 'undefined') { %><%=product.price%><%} %>"
+          />
+          <label class="form__label" for="quantity">Quantity</label>
+          <input
+            class="form__input"
+            type="number"
+            name="quantity"
+            id="quantity"
+            value="<% if (typeof(product)
+      !== 'undefined') { %><%=product.quantity%><%} %>"
+          />
+          <label class="form__label" for="category">Category</label>
+          <select class="form__input" name="category" id="category">
+            <% categories.map(cat => { %>
+            <option value="<%=cat.id%>"><%=cat.name%></option>
+            <% })%>
+          </select>
+          <button class="form__button"><span>Submit</span></button>
+        </form>
+        <% if(typeof(err) !== "undefined") {%>
+        <div class="card card--danger"><%= err%></div>
+        <%}%>
+      </div>
+    </div>
+  </body>
+</html>
