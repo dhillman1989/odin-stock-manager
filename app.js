@@ -6,6 +6,7 @@ const logger = require("morgan");
 const sassMiddleware = require("node-sass-middleware");
 const mongoose = require("mongoose");
 const methodOverride = require("method-override");
+const dotenv = require("dotenv").config();
 
 const indexRouter = require("./routes/index");
 const categoryRouter = require("./routes/category");
@@ -14,8 +15,7 @@ const userRouter = require("./routes/user");
 
 const app = express();
 
-const mongoDB =
-  "mongodb+srv://mdnlessonuser:CEHDKXF9kFUfAUuF@cluster0.qzgj7.mongodb.net/odin-shop-stock?retryWrites=true&w=majority";
+const mongoDB = `mongodb+srv://${process.env.MONGO_USER}:${process.env.MONGO_PASS}@cluster0.qzgj7.mongodb.net/${process.env.MONGO_COLLECTION}?retryWrites=true&w=majority`;
 mongoose.connect(mongoDB, { useNewUrlParser: true, useUnifiedTopology: true });
 
 //Get the default connection
